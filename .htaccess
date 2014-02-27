@@ -15,11 +15,11 @@
 </IfModule>
 
 # Redirections spécifiques
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 Redirect permanent  /dossier/     http://dossier.domaine.com/
 
 # Wordpress
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -45,7 +45,7 @@ ErrorDocument 503 /erreur/503.html
 ########################################################################
 
 # Bloquer le mode de compatibilité et forcer la dernière version
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge,chrome=1"
 
@@ -62,45 +62,45 @@ ErrorDocument 503 /erreur/503.html
 # Tip : pour forcer un type de fichier à être téléchargé : AddType application/octet-stream .extension
 
 # JavaScript / JSON
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 # Écrase les types MIME text/javascript erronés
 AddType application/javascript              js
 AddType application/json                    json map
 AddType application/ld+json                 jsonld
   
 # SVG
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 # Requis pour les fonts SVG sur iPad : twitter.com/FontSquirrel/status/14855840545
 AddType image/svg+xml                       svg svgz
 AddEncoding gzip                            svgz
 
 # Fonts
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddType  application/vnd.ms-fontobject      eot
 AddType  application/x-font-ttf             ttf ttc
 AddType  font/opentype                      otf
 AddType  application/x-font-woff            woff
 
 # Audio
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddType audio/mp4                           m4a f4a f4b
 AddType audio/ogg                           oga ogg opus
 
 # Vidéo
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddType video/mp4                           f4v f4p m4v mp4
 AddType video/ogg                           ogv
 AddType video/webm                          webm
 AddType video/x-flv                         flv
 
 # Images
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddType image/x-icon                        ico
 AddType image/jpeg                          jpeg jpg jpe JPG
 AddType image/gif                           gif GIF
 
 # Autres
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddType application/octet-stream            safariextz
 AddType application/x-chrome-extension      crx
 AddType application/x-opera-extension       oex
@@ -119,11 +119,11 @@ AddType text/x-vcard                        vcf
 ########################################################################
 
 # Déclarer UTF-8 comme jeu de caractères par défaut (appliqué par défaut aux fichiers de type text/plain et text/html)
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 AddDefaultCharset utf-8
 
 # Forcer l'encodage UTF-8 sur certains fichiers
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <IfModule mod_mime.c>
     AddCharset utf-8 .css .js .json .jsonld .xml .rss .atom 
 </IfModule>
@@ -133,7 +133,7 @@ AddDefaultCharset utf-8
 ########################################################################
 
 # ETag
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 # Supprimer l'en-tête Etag
 <IfModule mod_headers.c>
   Header unset ETag
@@ -143,7 +143,7 @@ AddDefaultCharset utf-8
 FileETag None
 
 # Compression Gzip
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 
 <IfModule mod_deflate.c>
   # Identifier les en-têtes modifiés et forcer le support de la compression : developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
@@ -176,7 +176,7 @@ FileETag None
 </IfModule>
 
 # Expiration des données
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive on
 
@@ -231,20 +231,20 @@ FileETag None
 ########################################################################
 
 # Interdire la lecture d'un répertoire sans fichier index
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <IfModule mod_autoindex.c>
   Options -Indexes
 </IfModule>
 
 # Interdire l'accès au fichier htaccess
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <Files .htaccess>
   Order allow,deny
   Deny from all
 </Files>
 
 # Interdire l'accès au fichier wp-config
-------------------------------------------------------------------------
+#-----------------------------------------------------------------------
 <Files wp-config.php>
   Order allow,deny
   Deny from all
