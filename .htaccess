@@ -115,7 +115,7 @@ AddType text/x-component                    htc
 AddType text/x-vcard                        vcf
 
 
-# Encodage
+# Encodage et langue
 ########################################################################
 
 # Déclarer UTF-8 comme jeu de caractères par défaut (appliqué par défaut aux fichiers de type text/plain et text/html)
@@ -127,6 +127,10 @@ AddDefaultCharset utf-8
 <IfModule mod_mime.c>
     AddCharset utf-8 .css .js .json .jsonld .xml .rss .atom 
 </IfModule>
+
+# Définir la langue par défaut
+#-----------------------------------------------------------------------
+DefaultLanguage fr-FR
 
 
 # Performances
