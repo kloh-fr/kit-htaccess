@@ -3,6 +3,7 @@
 # - server-configs-apache par H5BP : https://github.com/h5bp/server-configs-apache/blob/master/.htaccess
 # - bpi-htaccess par Corinne Schillinger : https://github.com/inseo/bpi-htaccess/blob/master/.htaccess
 # - htaccess par Gaël Poupard
+# Sous [licence MIT](http://opensource.org/licenses/MIT "The MIT licence")
 ########################################################################
 
 
@@ -191,7 +192,7 @@ FileETag None
   ExpiresByType text/html                     "access plus 0 seconds"
 
   # Cache manifeste
-  ExpiresByType text/cache-manifest           "access plus 0 second"
+  ExpiresByType text/cache-manifest           "access plus 0 seconds"
   
   # Données
   ExpiresByType text/xml                      "access plus 0 seconds"
@@ -223,8 +224,8 @@ FileETag None
   ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
 
   # CSS et JavaScript
-  ExpiresByType text/css                      "access plus 1 year"
-  ExpiresByType application/javascript        "access plus 1 year"
+  ExpiresByType text/css                      "access plus 1 month"
+  ExpiresByType application/javascript        "access plus 1 month"
 
   # Flux de syndication
   ExpiresByType application/rss+xml           "access plus 1 hour"
